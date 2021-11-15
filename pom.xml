@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>spring-study</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>kuangShen/spring-01-ioc</module>
+        <module>kuangShen/spring-02-ioc</module>
+        <module>kuangShen/spring-03-ioc</module>
+        <module>kuangShen/spring-04-ioc</module>
+        <module>kuangShen/spring-05-autowired</module>
+        <module>kuangShen/spring-06-autowired</module>
+        <module>kuangShen/spring-07-anno</module>
+        <module>kuangShen/spring-08-appconfig</module>
+        <module>kuangShen/spring-09-proxy</module>
+        <module>kuangShen/spring-10-aop</module>
+        <module>kuangShen/spring-11-transaction</module>
+    </modules>
+
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

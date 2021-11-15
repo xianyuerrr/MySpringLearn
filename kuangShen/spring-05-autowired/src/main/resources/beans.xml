@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cat" class="com.xianyue.pojo.Cat"/>
+    <bean id="dog" class="com.xianyue.pojo.Dog"/>
+
+    <!--常规装配-->
+    <!--<bean id="people" class="com.xianyue.pojo.People">-->
+    <!--    <property name="name" value="xianyue"/>-->
+    <!--    <property name="cat" ref="cat"/>-->
+    <!--    <property name="dog" ref="dog"/>-->
+    <!--</bean>-->
+
+    <!--ByName 自动装配-->
+    <!--如果 不存在<bean>的id 和 set 方法 后面的内容一致，那就会装配失败，返回空指针-->
+    <!--与 xml 中的 <bean> 的顺序无关，存在就行-->
+    <!--<bean id="people" class="com.xianyue.pojo.People" autowire="byName">-->
+    <!--    <property name="name" value="xianyue"/>-->
+    <!--</bean>-->
+
+    <!--ByType 自动装配-->
+    <!--如果 不存在 或 存在多个 对应对象类型的 <bean>，那就不知道该装配哪一个了，直接在xml就会报错-->
+    <bean id="people" class="com.xianyue.pojo.People" autowire="byType">
+        <property name="name" value="xianyue"/>
+    </bean>
+
+
+</beans>

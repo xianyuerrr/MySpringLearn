@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--注册 bean-->
+    <bean id="userServiceImpl" class="com.xianyue.service.UserServiceImpl"/>
+    <bean id="log" class="com.xianyue.log.Log"/>
+    <bean id="afterLog" class="com.xianyue.log.AfterLog"/>
+
+
+    <!--方式一 : 使用原生 Spring API 接口-->
+    <!--配置 aop-->
+    <!--<aop:config>-->
+    <!--    &lt;!&ndash;切入点，expression : 表达式，execution(要执行的位置: 返回值 类名.方法名(参数))&ndash;&gt;-->
+    <!--    <aop:pointcut id="pointcut" expression="execution(* com.xianyue.service.UserServiceImpl.*(..))"/>-->
+
+    <!--    &lt;!&ndash;要切入的操作&ndash;&gt;-->
+    <!--    <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>-->
+    <!--    <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+    <!--</aop:config>-->
+
+    <!--方式二 ：切面定义-->
+    <!--<bean id="diy" class="com.xianyue.diy.DiyPointCut"/>-->
+    <!--<aop:config>-->
+    <!--    &lt;!&ndash;自定义切面&ndash;&gt;-->
+    <!--    <aop:aspect id="aspectDiy" ref="diy">-->
+    <!--        &lt;!&ndash;切入点&ndash;&gt;-->
+    <!--        <aop:pointcut id="point" expression="execution(* com.xianyue.service.UserServiceImpl.*(..))"/>-->
+    <!--        &lt;!&ndash;通知&ndash;&gt;-->
+    <!--        <aop:before method="before" pointcut-ref="point"/>-->
+    <!--        <aop:after method="after" pointcut-ref="point"/>-->
+    <!--    </aop:aspect>-->
+    <!--</aop:config>-->
+
+    <!--方式三-->
+    <bean id="annotationPointCut" class="com.xianyue.diy.Annotation"/>
+    <!--开启注解支持,有两种方式:JDK(默认,proxy-target-class="false"),否则为 cglib-->
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
+
+</beans>

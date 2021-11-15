@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:p="http://www.springframework.org/schema/p"
+
+       xmlns:c="http://www.springframework.org/schema/c"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--p 命名空间（property）注入，可以直接注入属性-->
+    <bean id="user" class="com.xianyue.pojo.User" p:name="xianyue" p:age="20"/>
+
+    <!--c 命名空间(constructor)注入，通过构造器注入-->
+    <bean id="user2" class="com.xianyue.pojo.User" c:name="xianyuerrr"  c:age="20"/>
+
+</beans>

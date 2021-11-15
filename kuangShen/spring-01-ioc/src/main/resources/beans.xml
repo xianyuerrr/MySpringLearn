@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    id : 对象名
+        class : 类名（完整）
+        name : 别名，和 alias 一样
+    -->
+    <bean id="user" class="com.xianyue.pojo.User" name="xianyuerrr, yi-hen bi; bestBoy">
+        <!--        显式调用构造器，默认会调用无参构造-->
+        <!--        <constructor-arg name="name" value="xianye"/>-->
+
+        <!--        调用 set 方法-->
+        <property name="name" value="xianyue"/>
+    </bean>
+
+
+    <!--    alias : 别名-->
+    <alias name="user" alias="xianyue"/>
+
+    <!--    import 可将多个配置文件-->
+    <!--    <import resource="xxx.xml"/>-->
+</beans>
